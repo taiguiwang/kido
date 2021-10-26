@@ -111,7 +111,7 @@
 ===============================================*/
     
     .custom-navbar {
-        background-color: transparent;
+        /* background-color: transparent; */
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .09);
         height: 70px;
         max-height: 70px;
@@ -120,7 +120,7 @@
     .navbar-toggler {
         font-size: 38px;
         color: white;
-        background-color: transparent;
+        /* background-color: transparent; */
     }
     
     .navbar-toggler:focus {
@@ -468,6 +468,9 @@
 ===============================================*/
     
     @media (max-width: 1024px) {
+        .navbar-collapse {
+            background-color: salmon;
+        }
         .navbar-nav {
             width: 100%;
         }
