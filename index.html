@@ -49,14 +49,29 @@
                 <div class="text-center ">
                     <h1 class="mx-auto my-0 text-uppercase ">诚实、勇敢、爱</h1>
                     <h2 class="text-white-50 mx-auto mt-2 mb-5 ">培养珍贵的普通人</h2>
-                    <a class="btn btn-primary " href="#about ">开始吧</a>
+                    <a class="btn btn-primary " href="./all_teachers_and_students/index.html">师生墙 ></a>
                 </div>
             </div>
         </div>
     </header>
-    <!-- -->
-
-
+    <!--公众号-->
+    <div class="container_1">
+        <h1 id="xtgzh"></h1>
+        <div class="card_1">
+            <div class="card__avatar_1">
+                <img crossorigin="anonymous" src="./kido_logo.jpg" alt="Pug">
+            </div>
+            <div class="card__info_1">
+                <h2 class="card__name_1">实务学堂</h2>
+                <p class="card__location_1"></p>
+                <div>
+                    <button class="card__button_1 card__cta_1"><a style="text-decoration: none;color: black;" href="https://mp.weixin.qq.com/s/jJ7t5gQqzQMjQXMT5KGbpw">进入 ></a></button>
+                    <!-- <button class="card__button_1">Cancel</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
     <!-- Projects-->
 
     <!-- Footer-->
@@ -72,6 +87,44 @@
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js "></script>
+    <!--公众号-->
+    <script src='js/color-thief.min.js'></script>
+    <script src='js/tinycolor.min.js'></script>
+    <script>
+        //公众号
+        const cards = document.querySelectorAll(".card_1 ");
+        const colorThief = new ColorThief();
+
+        cards.forEach(card => {
+            const wrapper = card.querySelectorAll(".card__avatar_1 ")[0];
+            const img = wrapper.querySelectorAll("img ")[0];
+
+            wrapper.style.cssText += `background-image: url(${img.src})`;
+        });
+
+        window.onload = () => {
+            detectColors();
+        };
+
+        function detectColors() {
+            cards.forEach(card => {
+                        const wrapper = card.querySelectorAll(".card__avatar_1 ")[0];
+                        const cta = card.querySelectorAll(".card__cta_1 ")[0];
+                        const img = wrapper.querySelectorAll("img ")[0];
+                        const rgb = getColorData(img);
+                        let lum = tinycolor(rgb).getLuminance();
+
+                        card.style.cssText += `border-top: 4px solid ${rgb}`;
+                        cta.style.cssText += `background-color: ${rgb}; color: ${lum <= 0.4 ? `#FFFFFF` : `#000000`
+                    }`;
+            });
+        }
+
+        function getColorData(img) {
+            let rgbArray = colorThief.getColor(img);
+            return `rgb(${rgbArray[0]}, ${rgbArray[1]}, ${rgbArray[2]})`;
+        }
+    </script>
 </body>
 
 </html>

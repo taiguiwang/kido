@@ -91,7 +91,8 @@ body {
     line-height: var(--bs-body-line-height);
     color: var(--bs-body-color);
     text-align: var(--bs-body-text-align);
-    background-color: var(--bs-body-bg);
+    /* background-color: var(--bs-body-bg); */
+    background-image: linear-gradient(to left, rgba(255, 0, 149, 0.2), rgba(0, 247, 255, 0.2));
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -7603,7 +7604,6 @@ fieldset:disabled .btn {
 
 .bg-black {
     --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-white {
@@ -9112,6 +9112,7 @@ fieldset:disabled .btn {
     .px-lg-5 {
         padding-right: 3rem !important;
         padding-left: 3rem !important;
+        color: black;
     }
     .py-lg-0 {
         padding-top: 0 !important;
@@ -10493,5 +10494,74 @@ body {
 }
 
 .footer {
-    padding: 5rem 0;
+    padding-bottom: 13px;
+}
+
+
+/*公众号*/
+
+#xtgzh {
+    margin-bottom: 3rem;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.card_1 {
+    display: flex;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-top: 4px solid #ddd;
+    margin-bottom: 4rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+}
+
+.card__avatar_1 {
+    width: 150px;
+    height: 150px;
+    border-radius: 999px;
+    background-position: 50%;
+    background-size: cover;
+    flex-shrink: 0;
+    background-color: #f7fafc;
+    background-blend-mode: multiply;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.card__avatar_1>img {
+    display: none;
+}
+
+.card__info_1 {
+    padding-left: 2rem;
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card__name_1,
+.card__location_1 {
+    margin-bottom: 1rem;
+}
+
+.card__location_1 {
+    margin-top: 0;
+}
+
+.card__button_1 {
+    border: none;
+    border-radius: 3px;
+    background: #dddddd;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.container_1 {
+    min-width: 330px;
+    max-width: 520px;
+    margin: 0 auto;
 }
