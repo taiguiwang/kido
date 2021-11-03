@@ -10565,3 +10565,52 @@ body {
     max-width: 520px;
     margin: 0 auto;
 }
+
+
+/*学堂新闻趣事*/
+
+#boxContainer {
+    overflow: hidden;
+    height: 60px;
+    width: 300px;
+    border: 1px solid rgb(153, 151, 151);
+    border-radius: 10px;
+    box-shadow: 2px 4px 14px rgb(153, 151, 151);
+    background-color: yellow;
+    position: fixed;
+    top: 660px;
+    left: 10px;
+}
+
+.liItems {
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+#ulList {
+    list-style-type: disc;
+    margin-block: 0;
+    margin-inline: 0;
+    padding-inline: 0;
+    position: absolute;
+    top: 0;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(206, 40, 40);
+}
+
+a:hover {
+    color: blue;
+}
+
+@media (max-width: 540px) {
+    #boxContainer {
+        position: fixed;
+        top: 74px;
+        left: 35px;
+    }
+}

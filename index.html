@@ -72,7 +72,38 @@
         </div>
     </div>
     <hr>
-    <!-- Projects-->
+    <!-- 学堂新闻趣事 -->
+
+    <div id="boxContainer">
+        <ul id="ulList">
+            <li class="liItems">
+                <a href="">人生在世须尽欢 莫使金樽空对月。</a>
+            </li>
+            <li class="liItems">
+                <a href="">我寄愁心与明月，随风直到夜郎西。</a>
+            </li>
+            <li class="liItems">
+                <a href="">不是花中偏爱菊，此花开尽更无花。</a>
+            </li>
+            <li class="liItems">
+                <a href="">辛苦遭逢起一经，干戈寥落四周星。</a>
+            </li>
+            <li class="liItems">
+                <a href="">山河破碎风飘絮，身世浮沉雨打萍。</a>
+            </li>
+            <li class="liItems">
+                <a href="">惶恐滩头说惶恐，零丁洋里叹零丁。</a>
+            </li>
+            <li class="liItems">
+                <a href="">人生自古谁无死？留取丹心照汗青。</a>
+            </li>
+
+            <!-- 将第一条信息复制 -->
+            <li class="liItems">
+                <a href="">人生在世须尽欢 莫使金樽空对月</a>
+            </li>
+        </ul>
+    </div>
 
     <!-- Footer-->
     <footer class="footer bg-black small text-center text-white-50 ">
@@ -123,6 +154,28 @@
         function getColorData(img) {
             let rgbArray = colorThief.getColor(img);
             return `rgb(${rgbArray[0]}, ${rgbArray[1]}, ${rgbArray[2]})`;
+        }
+
+        //学堂新闻趣事
+        window.onload = function () {
+            var boxContainer = document.getElementById('boxContainer');
+            var ulList = document.getElementById('ulList');
+            var ulListLen = ulList.children.length;
+            var speed = 4000; //移动速度，值越大速度越慢
+            var timer = null; //定时器
+            var liHeight = 30; //li列表的高度
+            function marquee() {
+                console.log(ulList.offsetTop, ulList.style.top);
+                if (ulList.offsetTop <= -(liHeight * (ulListLen - 1))) { //判断复制的信息是否到达box的最左边
+                    ulList.style.top = 0;
+                    ulList.style.transition = 'none';
+                    marquee();
+                } else {
+                    ulList.style.transition = 'all .5s ease-in-out';
+                    ulList.style.top = (ulList.offsetTop - liHeight) + 'px';
+                }
+            }
+            timer = setInterval(marquee, speed); //设置定时器
         }
     </script>
 </body>
